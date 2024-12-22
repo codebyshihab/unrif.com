@@ -398,6 +398,27 @@
         setInterval(nextImage1, 5000);
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
+    </script>
+
     <footer class="bg-[#01362d] text-white text-center py-5 mt-16">
         <div class="max-w-3xl mx-auto px-4">
             <p class="text-sm mb-4">© 2024 UNRIF - Ullal NRI Forum. Together We Build a Stronger Community</p>
