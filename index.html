@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-2.png" alt="UNRIF Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-button">Home</a>
+                <a href="about.html" class="nav-button">About</a>
+                <a href="agendas.html" class="nav-button">Agendas</a>
+                <a href="contact.html" class="nav-button">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="images/image-2.jpg" alt="UNRIF Team Members">
+                    <div class="slide-content">
+                        <h1>Welcome to UNRIF</h1>
+                        <p>Making difference together</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/image-7.jpg" alt="Woman working on laptop">
+                    <div class="slide-content">
+                        <h1>Our Mission</h1>
+                        <p>Health, Education & Empowerment</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/image-1.jpg" alt="Woman working on laptop">
+                    <div class="slide-content">
+                        <h1>Our Vision</h1>
+                        <p>Together We Build a Stronger Community</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/crick-1.jpg" alt="UNRIF Cricket Tournament">
+                    <div class="slide-content">
+                        <h1>UNRIF Cricket Tournament</h1>
+                        <p>UNRIF Cricket Tournament at Alfalah ground Jubail on 20th Feb 2025</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/crick-2.jpg" alt="UNRIF Cricket Tournament">
+                    <div class="slide-content">
+                        <h1>Cricket Tournament 2025</h1>
+                        <p>Join us for an exciting cricket tournament at Al Falah Ground</p>
+                        <p>Bringing the community together through sports</p>
+                    </div>
+                </div>
+                
+              <div class="slide">
+                    <img src="images/unrif-jacket.jpg" alt="UNRIF Member Jacket">
+                    <div class="slide-content">
+                        <h1>UNRIF Member Jacket</h1>
+                        <p>Exclusive jackets for our esteemed members</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn">❮</button>
+                <button class="slider-btn next-btn">❯</button>
+            </div>
+            <div class="slider-dots">
+                <button class="dot active"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+            </div>
+        </section>
+    </main>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        // Auto advance slides every 5 seconds
+        setInterval(() => showSlide(currentSlide + 1), 5000);
+    </script>
+    <footer>
+        <div class="footer-content">
+          <p>© 2024 UNRIF - Ullal NRI Forum. Making difference together</p>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+         
+          </ul>
+          <div class="social-media">
+            <a href="https://www.facebook.com/share/dDFTU3K2mhBz6qZQ"><img src="images/facebook-icon.png" alt="Facebook"></a>
+          </div>
+        </div>
+    </footer>
+    </body>
+</html>
